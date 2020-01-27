@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{4D7574D7-2F17-4843-99C8-BDD599598AA7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>skinchangercc</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="core\features\skinchanger\glovechanger.cpp" />
+    <ClCompile Include="core\features\skinchanger\knifehook.cpp" />
+    <ClCompile Include="core\features\skinchanger\parser.cpp" />
+    <ClCompile Include="core\features\skinchanger\skinchanger.cpp" />
+    <ClCompile Include="core\hooks\hooks.cpp" />
+    <ClCompile Include="core\menu\config\config.cpp" />
+    <ClCompile Include="dependencies\interfaces\interfaces.cpp" />
+    <ClCompile Include="dependencies\math\math.cpp" />
+    <ClCompile Include="dependencies\utilities\hook.cpp" />
+    <ClCompile Include="dependencies\utilities\md5.cpp" />
+    <ClCompile Include="dependencies\utilities\netvar_manager.cpp" />
+    <ClCompile Include="dependencies\utilities\render.cpp" />
+    <ClCompile Include="dependencies\utilities\utilities.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="SDK\crypto\base64\base64.cpp" />
+    <ClCompile Include="SDK\crypto\hash\sha256.cpp" />
+    <ClCompile Include="SDK\crypto\hash\sha512.cpp" />
+    <ClCompile Include="SDK\globals\globals.cpp" />
+    <ClCompile Include="SDK\network\http\http_request.cpp" />
+    <ClCompile Include="SDK\network\ping\ping.cpp" />
+    <ClCompile Include="SDK\network\sokets\local_client.cpp" />
+    <ClCompile Include="source-sdk\math\vector3d.cpp" />
+    <ClCompile Include="source-sdk\math\view_matrix.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\features\skinchanger\glovechanger.hpp" />
+    <ClInclude Include="core\features\skinchanger\knifehook.hpp" />
+    <ClInclude Include="core\features\skinchanger\parser.hpp" />
+    <ClInclude Include="core\features\skinchanger\skinchanger.hpp" />
+    <ClInclude Include="core\hooks\hooks.hpp" />
+    <ClInclude Include="core\menu\config\archivex.hpp" />
+    <ClInclude Include="core\menu\config\config.hpp" />
+    <ClInclude Include="dependencies\common_includes.hpp" />
+    <ClInclude Include="dependencies\interfaces\c_global_vars_base.hpp" />
+    <ClInclude Include="dependencies\interfaces\engine_sounds.hpp" />
+    <ClInclude Include="dependencies\interfaces\glow_manager.hpp" />
+    <ClInclude Include="dependencies\interfaces\imageformats.h" />
+    <ClInclude Include="dependencies\interfaces\interfaces.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_debug_overlay.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_effects.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_engine_client.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_model_info.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_model_render.hpp" />
+    <ClInclude Include="dependencies\interfaces\iv_render_beams.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_app_system.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_base_client_dll.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_client_entity_list.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_client_mode.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_client_state.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_console.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_game_event_manager.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_input.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_input_system.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_localize.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_material_system.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_panel.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_player_movement.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_render_view.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_surface.hpp" />
+    <ClInclude Include="dependencies\interfaces\i_trace.hpp" />
+    <ClInclude Include="dependencies\math\math.hpp" />
+    <ClInclude Include="dependencies\utilities\fnv.hpp" />
+    <ClInclude Include="dependencies\utilities\hook.hpp" />
+    <ClInclude Include="dependencies\utilities\md5.hpp" />
+    <ClInclude Include="dependencies\utilities\netvar_manager.hpp" />
+    <ClInclude Include="dependencies\utilities\render.hpp" />
+    <ClInclude Include="dependencies\utilities\singleton.hpp" />
+    <ClInclude Include="dependencies\utilities\utilities.hpp" />
+    <ClInclude Include="SDK\crypto\base64\base64.hpp" />
+    <ClInclude Include="SDK\crypto\hash\sha256.hpp" />
+    <ClInclude Include="SDK\crypto\hash\sha512.hpp" />
+    <ClInclude Include="SDK\crypto\XorStr.h" />
+    <ClInclude Include="SDK\globals\globals.h" />
+    <ClInclude Include="SDK\network\http\http_request.h" />
+    <ClInclude Include="SDK\network\ping\ping.h" />
+    <ClInclude Include="SDK\network\sokets\local_client.h" />
+    <ClInclude Include="SDK\rapidjson\allocators.h" />
+    <ClInclude Include="SDK\rapidjson\document.h" />
+    <ClInclude Include="SDK\rapidjson\encodedstream.h" />
+    <ClInclude Include="SDK\rapidjson\encodings.h" />
+    <ClInclude Include="SDK\rapidjson\error\en.h" />
+    <ClInclude Include="SDK\rapidjson\error\error.h" />
+    <ClInclude Include="SDK\rapidjson\filereadstream.h" />
+    <ClInclude Include="SDK\rapidjson\filewritestream.h" />
+    <ClInclude Include="SDK\rapidjson\fwd.h" />
+    <ClInclude Include="SDK\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="SDK\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="SDK\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="SDK\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="SDK\rapidjson\internal\itoa.h" />
+    <ClInclude Include="SDK\rapidjson\internal\meta.h" />
+    <ClInclude Include="SDK\rapidjson\internal\pow10.h" />
+    <ClInclude Include="SDK\rapidjson\internal\regex.h" />
+    <ClInclude Include="SDK\rapidjson\internal\stack.h" />
+    <ClInclude Include="SDK\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="SDK\rapidjson\internal\strtod.h" />
+    <ClInclude Include="SDK\rapidjson\internal\swap.h" />
+    <ClInclude Include="SDK\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="SDK\rapidjson\memorybuffer.h" />
+    <ClInclude Include="SDK\rapidjson\memorystream.h" />
+    <ClInclude Include="SDK\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="SDK\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="SDK\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="SDK\rapidjson\pointer.h" />
+    <ClInclude Include="SDK\rapidjson\prettywriter.h" />
+    <ClInclude Include="SDK\rapidjson\rapidjson.h" />
+    <ClInclude Include="SDK\rapidjson\reader.h" />
+    <ClInclude Include="SDK\rapidjson\schema.h" />
+    <ClInclude Include="SDK\rapidjson\stream.h" />
+    <ClInclude Include="SDK\rapidjson\stringbuffer.h" />
+    <ClInclude Include="SDK\rapidjson\writer.h" />
+    <ClInclude Include="source-sdk\classes\client_class.hpp" />
+    <ClInclude Include="source-sdk\classes\collideable.hpp" />
+    <ClInclude Include="source-sdk\classes\convar.hpp" />
+    <ClInclude Include="source-sdk\classes\c_usercmd.hpp" />
+    <ClInclude Include="source-sdk\classes\entities.hpp" />
+    <ClInclude Include="source-sdk\classes\net_channel.hpp" />
+    <ClInclude Include="source-sdk\classes\recv_props.hpp" />
+    <ClInclude Include="source-sdk\classes\studio.hpp" />
+    <ClInclude Include="source-sdk\classes\view_setup.h" />
+    <ClInclude Include="source-sdk\math\utl_vector.hpp" />
+    <ClInclude Include="source-sdk\math\vector2d.hpp" />
+    <ClInclude Include="source-sdk\math\vector3d.hpp" />
+    <ClInclude Include="source-sdk\math\view_matrix.hpp" />
+    <ClInclude Include="source-sdk\misc\color.hpp" />
+    <ClInclude Include="source-sdk\sdk.hpp" />
+    <ClInclude Include="source-sdk\structs\dlight.hpp" />
+    <ClInclude Include="source-sdk\structs\materials.hpp" />
+    <ClInclude Include="source-sdk\structs\models.hpp" />
+    <ClInclude Include="source-sdk\structs\vertex_t.hpp" />
+    <ClInclude Include="source-sdk\structs\weaponinfo.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

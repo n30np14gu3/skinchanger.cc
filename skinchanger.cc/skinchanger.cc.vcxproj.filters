@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="source-sdk\math\vector3d.cpp">
+      <Filter>source-sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="source-sdk\math\view_matrix.cpp">
+      <Filter>source-sdk\math</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\interfaces\interfaces.cpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\math\math.cpp">
+      <Filter>dependencies\math</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\utilities\hook.cpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\utilities\md5.cpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\utilities\netvar_manager.cpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\utilities\render.cpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\utilities\utilities.cpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="core\features\skinchanger\glovechanger.cpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClCompile>
+    <ClCompile Include="core\features\skinchanger\knifehook.cpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClCompile>
+    <ClCompile Include="core\features\skinchanger\parser.cpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClCompile>
+    <ClCompile Include="core\features\skinchanger\skinchanger.cpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClCompile>
+    <ClCompile Include="core\hooks\hooks.cpp">
+      <Filter>core\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="core\menu\config\config.cpp">
+      <Filter>core\menu\config</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\crypto\base64\base64.cpp">
+      <Filter>SDK\crypto\base64</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\crypto\hash\sha256.cpp">
+      <Filter>SDK\crypto\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\crypto\hash\sha512.cpp">
+      <Filter>SDK\crypto\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\globals\globals.cpp">
+      <Filter>SDK\globals</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\network\http\http_request.cpp">
+      <Filter>SDK\network\http</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\network\sokets\local_client.cpp">
+      <Filter>SDK\network\sokets</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\network\ping\ping.cpp">
+      <Filter>SDK\network\ping</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source-sdk">
+      <UniqueIdentifier>{1ea4b0f1-cac1-4ab8-a0cb-f98ea575d98d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source-sdk\structs">
+      <UniqueIdentifier>{e1e69839-d03c-48ea-8531-30a0bc0a9045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source-sdk\misc">
+      <UniqueIdentifier>{fb404dce-8ac1-429b-b50f-86f5c8da0537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source-sdk\math">
+      <UniqueIdentifier>{28298fc2-fbd1-4ec2-beca-dc4bff6d0e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source-sdk\classes">
+      <UniqueIdentifier>{4488b464-afe1-4799-94fc-0239c66ad771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dependencies">
+      <UniqueIdentifier>{a54be101-f93f-49f5-af26-286c196498fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dependencies\interfaces">
+      <UniqueIdentifier>{c436a36d-b9d5-4901-bde0-76b973fccb3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dependencies\math">
+      <UniqueIdentifier>{41f19c32-07d7-41a3-90e5-78945a61dcc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dependencies\utilities">
+      <UniqueIdentifier>{c5ab0ce2-2ba4-40ca-939f-b0e9dec5b7cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{904618f6-0e12-4eb3-b322-436d9f02e0c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\features">
+      <UniqueIdentifier>{766b0d35-8af1-469e-8c26-739db287bdcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\hooks">
+      <UniqueIdentifier>{9e2dc1b2-37a1-4366-9969-6ddf44a7e3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\features\skinchanger">
+      <UniqueIdentifier>{5a7ca5a7-11ee-4c84-9301-d1990a0da0ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\menu">
+      <UniqueIdentifier>{3fc0f119-0dd3-4612-affc-a67c0a342472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\menu\config">
+      <UniqueIdentifier>{a8df5e9a-67c1-4517-a8dc-488dcb6f7da5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{7ad075ec-0d90-4f6c-9d6a-fc077b20a7f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\crypto">
+      <UniqueIdentifier>{076988c7-fcc9-47ab-91ae-1695f748889b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\crypto\base64">
+      <UniqueIdentifier>{a7d56d94-944e-406c-be9a-10e02b4e06fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\crypto\hash">
+      <UniqueIdentifier>{c4082944-46a2-4f71-9ebc-c7841bdd82c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\globals">
+      <UniqueIdentifier>{fd4a0c88-3cfe-4a67-bf9e-65c776035fed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\network">
+      <UniqueIdentifier>{7d2b6b54-0c83-4a18-bc51-092c2d97e8d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\network\http">
+      <UniqueIdentifier>{5869eec7-9ed0-4b5b-af94-49f190708c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\network\sokets">
+      <UniqueIdentifier>{d1a9be52-8828-4a2c-9b92-8d6f12d9fce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\rapidjson">
+      <UniqueIdentifier>{6e668e11-3d30-4d3e-8585-69806787f70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\rapidjson\error">
+      <UniqueIdentifier>{af479350-287a-4d71-a7d7-156a8da1c4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\rapidjson\internal">
+      <UniqueIdentifier>{72317852-6cb0-4234-9e4a-ba7414cfa28c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\rapidjson\msinttypes">
+      <UniqueIdentifier>{d2d5a180-36c8-4b87-ba47-76d86e5a6533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\network\ping">
+      <UniqueIdentifier>{093e15bb-b483-448f-92f5-e7930c19e265}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source-sdk\sdk.hpp">
+      <Filter>source-sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\structs\dlight.hpp">
+      <Filter>source-sdk\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\structs\materials.hpp">
+      <Filter>source-sdk\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\structs\models.hpp">
+      <Filter>source-sdk\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\structs\vertex_t.hpp">
+      <Filter>source-sdk\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\structs\weaponinfo.hpp">
+      <Filter>source-sdk\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\misc\color.hpp">
+      <Filter>source-sdk\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\math\utl_vector.hpp">
+      <Filter>source-sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\math\vector2d.hpp">
+      <Filter>source-sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\math\vector3d.hpp">
+      <Filter>source-sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\math\view_matrix.hpp">
+      <Filter>source-sdk\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\c_usercmd.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\client_class.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\collideable.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\convar.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\entities.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\net_channel.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\recv_props.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\studio.hpp">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="source-sdk\classes\view_setup.h">
+      <Filter>source-sdk\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\c_global_vars_base.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\engine_sounds.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\glow_manager.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_app_system.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_base_client_dll.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_client_entity_list.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_client_mode.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_client_state.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_console.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_game_event_manager.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_input.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_input_system.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_localize.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_material_system.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_panel.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_player_movement.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_render_view.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_surface.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\i_trace.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\imageformats.h">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\interfaces.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_debug_overlay.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_effects.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_engine_client.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_model_info.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_model_render.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\interfaces\iv_render_beams.hpp">
+      <Filter>dependencies\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\math\math.hpp">
+      <Filter>dependencies\math</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\fnv.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\hook.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\md5.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\netvar_manager.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\render.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\singleton.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\utilities\utilities.hpp">
+      <Filter>dependencies\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="core\features\skinchanger\glovechanger.hpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClInclude>
+    <ClInclude Include="core\features\skinchanger\knifehook.hpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClInclude>
+    <ClInclude Include="core\features\skinchanger\parser.hpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClInclude>
+    <ClInclude Include="core\features\skinchanger\skinchanger.hpp">
+      <Filter>core\features\skinchanger</Filter>
+    </ClInclude>
+    <ClInclude Include="core\hooks\hooks.hpp">
+      <Filter>core\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\common_includes.hpp">
+      <Filter>dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="core\menu\config\archivex.hpp">
+      <Filter>core\menu\config</Filter>
+    </ClInclude>
+    <ClInclude Include="core\menu\config\config.hpp">
+      <Filter>core\menu\config</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\crypto\base64\base64.hpp">
+      <Filter>SDK\crypto\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\crypto\hash\sha256.hpp">
+      <Filter>SDK\crypto\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\crypto\hash\sha512.hpp">
+      <Filter>SDK\crypto\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\crypto\XorStr.h">
+      <Filter>SDK\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\globals\globals.h">
+      <Filter>SDK\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\network\http\http_request.h">
+      <Filter>SDK\network\http</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\network\sokets\local_client.h">
+      <Filter>SDK\network\sokets</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\allocators.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\document.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\encodedstream.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\encodings.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\filereadstream.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\filewritestream.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\fwd.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\istreamwrapper.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\memorybuffer.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\memorystream.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\ostreamwrapper.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\pointer.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\prettywriter.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\rapidjson.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\reader.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\schema.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\stream.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\stringbuffer.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\writer.h">
+      <Filter>SDK\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\error\en.h">
+      <Filter>SDK\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\error\error.h">
+      <Filter>SDK\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\biginteger.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\diyfp.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\dtoa.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\ieee754.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\itoa.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\meta.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\pow10.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\regex.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\stack.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\strfunc.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\strtod.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\internal\swap.h">
+      <Filter>SDK\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\msinttypes\inttypes.h">
+      <Filter>SDK\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\rapidjson\msinttypes\stdint.h">
+      <Filter>SDK\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\network\ping\ping.h">
+      <Filter>SDK\network\ping</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

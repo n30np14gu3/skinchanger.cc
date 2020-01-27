@@ -1,0 +1,52 @@
+﻿<Window x:Name="MainForm" x:Class="skinchanger_loader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:Properties="clr-namespace:skinchanger_loader.Properties"
+        mc:Ignorable="d"
+        Title="Skinchanger.cc" Height="342" Width="604"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize" Loaded="MainForm_Loaded" Icon="default.ico">
+    <Grid Background="White">
+        <StackPanel x:Name="DragHeader" Height="60" VerticalAlignment="Top" Background="White" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove"/>
+        <Separator HorizontalAlignment="Left" Height="16" Margin="0,53,0,0" VerticalAlignment="Top" Width="604" Background="#FFE2E2E2"/>
+        <Button x:Name="CloseBtn"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Close}"
+                     Height="18" Width="15" FontSize="14" Background="Transparent" BorderBrush="#00124C85" Foreground="Black" RenderTransformOrigin="0.585,0.818" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,21,20,0" Padding="0" Click="CloseBtn_Click" />
+
+        <Button x:Name="MinBtn"  Margin="0,21,40,0"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Minus}" Click="MinBtn_Click"
+                    Padding="0,5,0,0"
+                    Height="18" Width="13" FontSize="14" Background="#00000000" BorderBrush="#FF124C85" Foreground="#FF111111" 
+                    Grid.Column="0" IsTabStop="False" IsManipulationEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <Image x:Name="LogoImage" HorizontalAlignment="Left" Height="30" Margin="273,18,0,0" VerticalAlignment="Top" Width="40" Visibility="Visible" Source="pack://siteoforigin:,,,/Resources/header_image.png"/>
+        <Button x:Name="BStartButton" Content="Запустить Skinchanger" Height="44" Margin="302,142,0,0" VerticalAlignment="Top" Background="#FF28A74D" BorderBrush="{x:Null}" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Padding="0,4" HorizontalAlignment="Left" Width="262" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="White" Click="BStartButton_Click"/>
+        <Button x:Name="BPreorder" Content="Хочу предзаказать" HorizontalAlignment="Left" Height="44" Margin="20,253,0,0" VerticalAlignment="Top" Width="262" Background="#FF1C52DD" BorderBrush="{x:Null}" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Padding="0,4" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="White" Click="BPreorder_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,81,0,0" TextWrapping="Wrap" Text="Пробная (Free) версия программы Skinchanger.cc" VerticalAlignment="Top" Height="56" Width="252" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Rg" FontSize="20" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="302,81,0,0" TextWrapping="Wrap" Text="Откройте CS:GO                         и запустите Skinchanger." VerticalAlignment="Top" Height="56" Width="252" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Rg" FontSize="20" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,137,0,0" TextWrapping="Wrap" Text="Бесплатная версия программы скоро закроется. Если вы желаете оформить предзаказ и получить огромные скидки и бонусы после открытия проекта - ознакомьтесь." VerticalAlignment="Top" Height="103" Width="262" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="302,206,0,0" TextWrapping="Wrap" Text="Онлайн в программе:" VerticalAlignment="Top" Height="22" Width="165" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Foreground="Black"/>
+        <Label x:Name="WebLink" HorizontalAlignment="Left" Margin="363,260,0,0" Content="www.skinchanger.cc" VerticalAlignment="Top" Height="29" Width="147" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Style="{StaticResource linkStyle}" Padding="0,5" MouseLeftButtonUp="WebLink_MouseLeftButtonUp"/>
+        <TextBlock x:Name="Tonline" HorizontalAlignment="Left" Margin="472,206,0,0" TextWrapping="Wrap" Text="1, 345" VerticalAlignment="Top" Height="22" Width="112" FontFamily="/skinchanger_loader;component/Resources/#Proxima Nova Lt" FontSize="16" Foreground="Black"/>
+        <materialDesign:Snackbar
+                IsActive="False"
+                x:Name="InfoMessage"
+                ActionButtonStyle="{StaticResource f1337}"
+                HorizontalAlignment="Stretch"
+                Tag="">
+            <materialDesign:SnackbarMessage
+                    Content=""
+                    ActionContent="Закрыть"
+                    Tag=""
+                    Name="InfoMessage_Text" ActionClick="InfoMessage_Text_ActionClick"/>
+        </materialDesign:Snackbar>
+    </Grid>
+</Window>
