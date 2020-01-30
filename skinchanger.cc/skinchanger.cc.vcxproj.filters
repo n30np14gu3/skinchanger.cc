@@ -59,14 +59,14 @@
     <ClCompile Include="SDK\globals\globals.cpp">
       <Filter>SDK\globals</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\network\http\http_request.cpp">
-      <Filter>SDK\network\http</Filter>
-    </ClCompile>
     <ClCompile Include="SDK\network\sokets\local_client.cpp">
       <Filter>SDK\network\sokets</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\network\ping\ping.cpp">
-      <Filter>SDK\network\ping</Filter>
+    <ClCompile Include="SDK\network\websockets\ws.cpp">
+      <Filter>SDK\network\websockets</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\network\sokets\json_ex\json_ex.cpp">
+      <Filter>SDK\network\sokets\json_ex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -133,26 +133,14 @@
     <Filter Include="SDK\network">
       <UniqueIdentifier>{7d2b6b54-0c83-4a18-bc51-092c2d97e8d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SDK\network\http">
-      <UniqueIdentifier>{5869eec7-9ed0-4b5b-af94-49f190708c37}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SDK\network\sokets">
       <UniqueIdentifier>{d1a9be52-8828-4a2c-9b92-8d6f12d9fce2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SDK\rapidjson">
-      <UniqueIdentifier>{6e668e11-3d30-4d3e-8585-69806787f70c}</UniqueIdentifier>
+    <Filter Include="SDK\network\websockets">
+      <UniqueIdentifier>{66a25c56-1d22-461b-8943-eb8d3117b522}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SDK\rapidjson\error">
-      <UniqueIdentifier>{af479350-287a-4d71-a7d7-156a8da1c4ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK\rapidjson\internal">
-      <UniqueIdentifier>{72317852-6cb0-4234-9e4a-ba7414cfa28c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK\rapidjson\msinttypes">
-      <UniqueIdentifier>{d2d5a180-36c8-4b87-ba47-76d86e5a6533}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK\network\ping">
-      <UniqueIdentifier>{093e15bb-b483-448f-92f5-e7930c19e265}</UniqueIdentifier>
+    <Filter Include="SDK\network\sokets\json_ex">
+      <UniqueIdentifier>{4f988370-40bb-4962-8806-b94ae3c86c00}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -360,119 +348,14 @@
     <ClInclude Include="SDK\globals\globals.h">
       <Filter>SDK\globals</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\network\http\http_request.h">
-      <Filter>SDK\network\http</Filter>
-    </ClInclude>
     <ClInclude Include="SDK\network\sokets\local_client.h">
       <Filter>SDK\network\sokets</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\rapidjson\allocators.h">
-      <Filter>SDK\rapidjson</Filter>
+    <ClInclude Include="SDK\network\websockets\ws.h">
+      <Filter>SDK\network\websockets</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\rapidjson\document.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\encodedstream.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\encodings.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\filereadstream.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\filewritestream.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\fwd.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\istreamwrapper.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\memorybuffer.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\memorystream.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\ostreamwrapper.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\pointer.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\prettywriter.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\rapidjson.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\reader.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\schema.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\stream.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\stringbuffer.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\writer.h">
-      <Filter>SDK\rapidjson</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\error\en.h">
-      <Filter>SDK\rapidjson\error</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\error\error.h">
-      <Filter>SDK\rapidjson\error</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\biginteger.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\diyfp.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\dtoa.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\ieee754.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\itoa.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\meta.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\pow10.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\regex.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\stack.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\strfunc.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\strtod.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\internal\swap.h">
-      <Filter>SDK\rapidjson\internal</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\msinttypes\inttypes.h">
-      <Filter>SDK\rapidjson\msinttypes</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\rapidjson\msinttypes\stdint.h">
-      <Filter>SDK\rapidjson\msinttypes</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\network\ping\ping.h">
-      <Filter>SDK\network\ping</Filter>
+    <ClInclude Include="SDK\network\sokets\json_ex\json_ex.h">
+      <Filter>SDK\network\sokets\json_ex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

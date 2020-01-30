@@ -74,6 +74,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -88,14 +91,16 @@
     </ApplicationDefinition>
     <Compile Include="ClientData.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SDK\Api\LocalProto.cs" />
+    <Compile Include="SDK\Api\Structs\AuthData.cs" />
+    <Compile Include="SDK\Api\Structs\DllResponse.cs" />
+    <Compile Include="SDK\Api\Structs\LocalRequest.cs" />
     <Compile Include="SDK\Api\Structs\ServerCodes.cs" />
-    <Compile Include="SDK\Api\Structs\ServerResponse.cs" />
+    <Compile Include="SDK\Api\Structs\ServerRequest.cs" />
     <Compile Include="SDK\Device\HWID.cs" />
     <Compile Include="SDK\extensions\BitmapExtensions.cs" />
     <Compile Include="SDK\Win32\Injector.cs" />
     <Compile Include="SDK\Win32\NativeMethods.cs" />
-    <Compile Include="SDK\Win32\PROTO_HEADER.cs" />
-    <Compile Include="SDK\Win32\SERVER_RESPONSE.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -147,6 +152,7 @@
   <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">
     <ItemGroup>

@@ -23,7 +23,7 @@
     <ProjectGuid>{4D7574D7-2F17-4843-99C8-BDD599598AA7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>skinchangercc</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -72,16 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;D:\DLL\boost;D:\DLL\rapidjson;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;D:\DLL\boost\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;D:\DLL\boost;D:\DLL\rapidjson;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;D:\DLL\boost\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,8 +92,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>
+      </LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -120,9 +122,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;SKINCHANGERCC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -166,9 +169,9 @@
     <ClCompile Include="SDK\crypto\hash\sha256.cpp" />
     <ClCompile Include="SDK\crypto\hash\sha512.cpp" />
     <ClCompile Include="SDK\globals\globals.cpp" />
-    <ClCompile Include="SDK\network\http\http_request.cpp" />
-    <ClCompile Include="SDK\network\ping\ping.cpp" />
+    <ClCompile Include="SDK\network\sokets\json_ex\json_ex.cpp" />
     <ClCompile Include="SDK\network\sokets\local_client.cpp" />
+    <ClCompile Include="SDK\network\websockets\ws.cpp" />
     <ClCompile Include="source-sdk\math\vector3d.cpp" />
     <ClCompile Include="source-sdk\math\view_matrix.cpp" />
   </ItemGroup>
@@ -221,44 +224,9 @@
     <ClInclude Include="SDK\crypto\hash\sha512.hpp" />
     <ClInclude Include="SDK\crypto\XorStr.h" />
     <ClInclude Include="SDK\globals\globals.h" />
-    <ClInclude Include="SDK\network\http\http_request.h" />
-    <ClInclude Include="SDK\network\ping\ping.h" />
+    <ClInclude Include="SDK\network\sokets\json_ex\json_ex.h" />
     <ClInclude Include="SDK\network\sokets\local_client.h" />
-    <ClInclude Include="SDK\rapidjson\allocators.h" />
-    <ClInclude Include="SDK\rapidjson\document.h" />
-    <ClInclude Include="SDK\rapidjson\encodedstream.h" />
-    <ClInclude Include="SDK\rapidjson\encodings.h" />
-    <ClInclude Include="SDK\rapidjson\error\en.h" />
-    <ClInclude Include="SDK\rapidjson\error\error.h" />
-    <ClInclude Include="SDK\rapidjson\filereadstream.h" />
-    <ClInclude Include="SDK\rapidjson\filewritestream.h" />
-    <ClInclude Include="SDK\rapidjson\fwd.h" />
-    <ClInclude Include="SDK\rapidjson\internal\biginteger.h" />
-    <ClInclude Include="SDK\rapidjson\internal\diyfp.h" />
-    <ClInclude Include="SDK\rapidjson\internal\dtoa.h" />
-    <ClInclude Include="SDK\rapidjson\internal\ieee754.h" />
-    <ClInclude Include="SDK\rapidjson\internal\itoa.h" />
-    <ClInclude Include="SDK\rapidjson\internal\meta.h" />
-    <ClInclude Include="SDK\rapidjson\internal\pow10.h" />
-    <ClInclude Include="SDK\rapidjson\internal\regex.h" />
-    <ClInclude Include="SDK\rapidjson\internal\stack.h" />
-    <ClInclude Include="SDK\rapidjson\internal\strfunc.h" />
-    <ClInclude Include="SDK\rapidjson\internal\strtod.h" />
-    <ClInclude Include="SDK\rapidjson\internal\swap.h" />
-    <ClInclude Include="SDK\rapidjson\istreamwrapper.h" />
-    <ClInclude Include="SDK\rapidjson\memorybuffer.h" />
-    <ClInclude Include="SDK\rapidjson\memorystream.h" />
-    <ClInclude Include="SDK\rapidjson\msinttypes\inttypes.h" />
-    <ClInclude Include="SDK\rapidjson\msinttypes\stdint.h" />
-    <ClInclude Include="SDK\rapidjson\ostreamwrapper.h" />
-    <ClInclude Include="SDK\rapidjson\pointer.h" />
-    <ClInclude Include="SDK\rapidjson\prettywriter.h" />
-    <ClInclude Include="SDK\rapidjson\rapidjson.h" />
-    <ClInclude Include="SDK\rapidjson\reader.h" />
-    <ClInclude Include="SDK\rapidjson\schema.h" />
-    <ClInclude Include="SDK\rapidjson\stream.h" />
-    <ClInclude Include="SDK\rapidjson\stringbuffer.h" />
-    <ClInclude Include="SDK\rapidjson\writer.h" />
+    <ClInclude Include="SDK\network\websockets\ws.h" />
     <ClInclude Include="source-sdk\classes\client_class.hpp" />
     <ClInclude Include="source-sdk\classes\collideable.hpp" />
     <ClInclude Include="source-sdk\classes\convar.hpp" />

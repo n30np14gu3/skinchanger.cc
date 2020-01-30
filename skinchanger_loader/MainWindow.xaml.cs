@@ -1,9 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using skinchanger_loader.SDK.Api;
+using skinchanger_loader.SDK.Api.Structs;
+using skinchanger_loader.SDK.Device;
+using WebSocketSharp;
 
 
 namespace skinchanger_loader
@@ -49,24 +56,87 @@ namespace skinchanger_loader
             WindowState = WindowState.Minimized;
         }
 
-        private DateTime UnixTimeStampToDateTime(double unixTimeStamp)
-        {
-            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dtDateTime;
-        }
-
         private void MainForm_Loaded(object sender, RoutedEventArgs e)
         {
+            WebSocket ws = new WebSocket("wss://skinchanger.cc/api/software_v2/");
+            ServerRequest<AuthData> sr = new ServerRequest<AuthData>()
+            {
+                data = new AuthData { hwid = HWID.GetSign() },
+                type = "demoConnect"
+            };
 
+            ws.OnError += (o, args) =>
+            {
+                showMessage($"WS Error: {args.Message}", Color.FromRgb(255, 0, 0), "Закрыть", "message");
+            };
+
+            ws.OnMessage += (o, args) =>
+            {
+                JObject obj = JObject.Parse(args.Data);
+                switch (obj["type"].ToString())
+                {
+                    case "demoConnect":
+                        switch (obj["status"].ToObject<ServerCodes>())
+                        {
+                            case ServerCodes.API_CODE_OK:
+                                if (obj["data"]["version"].ToObject<int>() > ClientData.LAST_UPDATE)
+                                {
+                                    Dispatcher?.Invoke(() =>
+                                    {
+                                        showMessage("Вышло новое обновление!\r\nВышло новое обновление!", Color.FromRgb(255, 0, 0), "Закрыть",
+                                            "message");
+                                    });
+                                    return;
+                                }
+
+                                Dispatcher?.Invoke(() =>
+                                {
+                                    TOnline.Content = obj["data"]["online"].ToString();
+                                    BStartButton.IsEnabled = true;
+                                });
+                               
+
+                                break;
+
+                            case ServerCodes.API_CODE_PROHIBDED:
+                                Dispatcher?.Invoke(() =>
+                                {
+                                    showMessage("Отказ от авторизации!", Color.FromRgb(255, 0, 0), "Закрыть", "message");
+                                });
+                                break;
+                        }
+                        break;
+
+                    case "online":
+                        Dispatcher?.Invoke(() => { TOnline.Content = obj["data"]["online"].ToString(); });
+                        break;
+
+                    case "update":
+                        showMessage("Вышло новое обновление!\r\nВышло новое обновление!", Color.FromRgb(255, 0, 0), "Закрыть",
+                            "message");
+                        break;
+                }
+            };
+
+            ws.Connect();
+            ws.Send(JsonConvert.SerializeObject(sr));
         }
 
         private void cheatSign()
         {
+            using (LocalProto proto = new LocalProto(1358))
+            {
 
+
+            }
         }
 
         void injectLibs()
+        {
+
+        }
+
+        void downloadDll()
         {
 
         }
@@ -135,5 +205,9 @@ namespace skinchanger_loader
             InfoMessage.IsActive = true;
         }
 
+        private async void BStartButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Task.Run(downloadDll);
+        }
     }
 }
