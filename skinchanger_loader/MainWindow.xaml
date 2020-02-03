@@ -30,8 +30,8 @@
         <Label Content="Пробная версия" HorizontalAlignment="Left" Margin="24,108,0,0" VerticalAlignment="Top" Foreground="#FFE9EBF9" Padding="0" FontSize="20"/>
         <Button x:Name="BStartButton" Content="Запустить Skinchanger" HorizontalAlignment="Left" Margin="24,149,0,0" VerticalAlignment="Top" Width="327" Height="40" Background="#FF4E7CFF" BorderBrush="#FF4E7CFF" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="#FFE9EBF9" IsEnabled="False" Click="BStartButton_Click"/>
         <Label Content="via HUGERAIN" HorizontalAlignment="Left" Margin="257,111,0,0" VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0"/>
-        <Button Content="Хочу предзаказать!" HorizontalAlignment="Left" Margin="24,364,0,0" VerticalAlignment="Top" Width="327" Height="40" Background="#FFCC40" BorderBrush="#FFCC40" Style="{DynamicResource ResourceKey=MaterialDesignFlatButton}" Foreground="#202442"/>
-        <Label Content="Помощь и инструкция / FAQ" HorizontalAlignment="Left" Margin="94,207,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0"/>
+        <Button Content="Хочу предзаказать!" HorizontalAlignment="Left" Margin="24,364,0,0" VerticalAlignment="Top" Width="327" Height="40" Background="#FFCC40" BorderBrush="#FFCC40" Style="{DynamicResource ResourceKey=MaterialDesignFlatButton}" Foreground="#202442" Click="Button_Click"/>
+        <Label x:Name="TFaq" Content="Помощь и инструкция / FAQ" HorizontalAlignment="Left" Margin="94,207,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0" MouseLeftButtonUp="TFaq_MouseLeftButtonUp"/>
         <Label Content="Хочешь сэкономить к запуску?" HorizontalAlignment="Left" Margin="24,271,0,0" VerticalAlignment="Top" Foreground="#FFE9EBF9" Padding="0" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,312,0,0" TextWrapping="Wrap" Text="Оформи предзаказ по огромной скидке и получи уникальные бонусы к отрытию проекта." VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0" Width="327" Height="32"/>
         <Label Content="{materialDesign:PackIcon}" Height="16" Width="16" Margin="18,487,341,17" Padding="0" FontSize="20" Foreground="#26DA7A"/>
@@ -46,13 +46,14 @@
             x:Name="InfoMessage"
             ActionButtonStyle="{StaticResource f1337}"
             HorizontalAlignment="Stretch"
-            Tag="">
+            Tag="" Background="#FF202442" Foreground="#FF737AAE">
             <materialDesign:SnackbarMessage
                 Content=""
+                Foreground="#E9EBF9"
                 ActionContent="Закрыть"
                 Tag=""
                 Name="InfoMessage_Text" ActionClick="InfoMessage_Text_ActionClick"/>
         </materialDesign:Snackbar>
-        <Label Content="www.skinchanger.cc" HorizontalAlignment="Left" Margin="120,428,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0"/>
+        <Label x:Name="TMainLink" Content="www.skinchanger.cc" HorizontalAlignment="Left" Margin="120,428,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0" MouseLeftButtonUp="TMainLink_MouseLeftButtonUp"/>
     </Grid>
 </Window>

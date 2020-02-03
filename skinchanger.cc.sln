@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "skinchanger.cc", "skinchanger.cc\skinchanger.cc.vcxproj", "{4D7574D7-2F17-4843-99C8-BDD599598AA7}"
 EndProject
@@ -12,6 +12,9 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release_DBG|Any CPU = Release_DBG|Any CPU
+		Release_DBG|x64 = Release_DBG|x64
+		Release_DBG|x86 = Release_DBG|x86
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
@@ -22,7 +25,12 @@ Global
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Debug|x64.Build.0 = Debug|x64
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Debug|x86.ActiveCfg = Debug|Win32
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Debug|x86.Build.0 = Debug|Win32
+		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release_DBG|Any CPU.ActiveCfg = Release_DBG|Win32
+		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release_DBG|Any CPU.Build.0 = Release_DBG|Win32
+		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release_DBG|x64.ActiveCfg = Release_DBG|x64
+		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release_DBG|x86.ActiveCfg = Release_DBG|Win32
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release|Any CPU.ActiveCfg = Release|Win32
+		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release|Any CPU.Build.0 = Release|Win32
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release|x64.ActiveCfg = Release|x64
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release|x64.Build.0 = Release|x64
 		{4D7574D7-2F17-4843-99C8-BDD599598AA7}.Release|x86.ActiveCfg = Release|Win32
@@ -33,6 +41,11 @@ Global
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Debug|x64.Build.0 = Debug|Any CPU
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Debug|x86.Build.0 = Debug|Any CPU
+		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release_DBG|Any CPU.ActiveCfg = Release_DBG|Any CPU
+		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release_DBG|x64.ActiveCfg = Release_DBG|Any CPU
+		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release_DBG|x64.Build.0 = Release_DBG|Any CPU
+		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release_DBG|x86.ActiveCfg = Release_DBG|Any CPU
+		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release_DBG|x86.Build.0 = Release_DBG|Any CPU
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B44E5486-DF63-4F4C-9ED8-869B9250CDC6}.Release|x64.ActiveCfg = Release|Any CPU

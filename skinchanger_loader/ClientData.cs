@@ -2,6 +2,8 @@
 {
     internal static  class ClientData
     {
-        internal const int LAST_UPDATE = 1579382001;
+        internal const int LAST_UPDATE = 1579392001;
+        internal static readonly string SUPPORT_URL = "https://vk.me/skinchangercc";
+        internal static readonly string SKINCHANGER_CC = "https://skinchanger.cc";
     }
 }

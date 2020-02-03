@@ -50,6 +50,17 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_DBG|AnyCPU'">
+    <OutputPath>bin\Release_DBG\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
@@ -98,7 +109,7 @@
     <Compile Include="SDK\Api\Structs\ServerCodes.cs" />
     <Compile Include="SDK\Api\Structs\ServerRequest.cs" />
     <Compile Include="SDK\Device\HWID.cs" />
-    <Compile Include="SDK\extensions\BitmapExtensions.cs" />
+    <Compile Include="SDK\Win32\eLoadFlags.cs" />
     <Compile Include="SDK\Win32\Injector.cs" />
     <Compile Include="SDK\Win32\NativeMethods.cs" />
     <Page Include="MainWindow.xaml">

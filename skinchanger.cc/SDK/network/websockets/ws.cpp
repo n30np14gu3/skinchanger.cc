@@ -16,6 +16,10 @@
 
 #include "../../globals/globals.h"
 
+#if DEBUG
+#include <Windows.h>
+#endif
+
 namespace ws
 {
 	namespace beast = boost::beast;         // from <boost/beast.hpp>
@@ -106,6 +110,10 @@ namespace ws
 			if (ec)
 				exit(0);
 
+#if DEBUG
+			MessageBox(nullptr, "WS ON HANDSHAKE", "", MB_OK);
+#endif
+			
 			rapidjson::Document request;
 			request.SetObject();
 			rapidjson::Document::AllocatorType& allocator = request.GetAllocator();
@@ -132,8 +140,11 @@ namespace ws
 
 		void on_write(beast::error_code ec, std::size_t bytes_transferred)
 		{
+#if DEBUG
+			MessageBox(nullptr, "DATA SENDED", "", MB_OK);
+#endif
+			
 			boost::ignore_unused(bytes_transferred);
-
 			if (ec)
 				exit(0);
 
@@ -153,10 +164,16 @@ namespace ws
 
 			std::string s = beast::buffers_to_string(buffer_.data());
 
+#if DEBUG
+			MessageBox(nullptr, ("data recived!\n" + s).c_str(), "", MB_OK);
+#endif
+			
 			buffer_.clear();
 			rapidjson::Document d;
 			d.Parse(s.c_str());
+			
 			std::string type = std::string(d["type"].GetString());
+			
 			if (type == "online")
 			{
 				ws_.async_read(buffer_, beast::bind_front_handler(&session::on_read, shared_from_this()));
@@ -165,11 +182,11 @@ namespace ws
 
 			if (type == "demoConnect")
 			{
-				int status = d["data"]["status"].GetInt();
+				int status = d["status"].GetInt();
 				if (status != 100)
 					exit(0);
 
-				if (globals::last_update > d["data"]["last_update"].GetInt())
+				if (globals::last_update < d["data"]["version"].GetInt())
 					exit(0);
 				
 				ws_.async_read(buffer_, beast::bind_front_handler(&session::on_read, shared_from_this()));
@@ -194,7 +211,7 @@ namespace ws
 	};
 }
 
-void ws::init_client(const char* host, const char* port, const char* api, const void* pUserData)
+void ws::init_client(const char* host, const char* port, const char* api)
 {
 	net::io_context ioc;
 	std::make_shared<session>(ioc)->run(host, port, api);

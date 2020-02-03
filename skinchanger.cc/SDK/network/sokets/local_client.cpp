@@ -10,10 +10,9 @@
 #include "../../globals/globals.h"
 #include "json_ex/json_ex.h"
 
-
-
 local_client::local_client(const char* ip, u_short port)
 {
+	Sleep(1000);
 	m_sClient = 0;
 	m_iErrorCode = 0;
 
@@ -35,6 +34,11 @@ local_client::local_client(const char* ip, u_short port)
 		closesocket(m_sClient);
 		WSACleanup();
 	}
+	
+#if DEBUG
+	MessageBox(nullptr, "Connected", "", MB_OK);
+#endif
+	
 	pKey = new byte[8];
 	memset(pKey, 0, 8);
 
@@ -44,6 +48,9 @@ local_client::local_client(const char* ip, u_short port)
 	CryptReleaseContext(hCryptCtx, 0);
 	send(m_sClient, reinterpret_cast<const char*>(pKey), 8, 0);
 
+#if DEBUG
+	MessageBox(nullptr, "Key sended", "", MB_OK);
+#endif
 }
 
 local_client::~local_client()
@@ -63,6 +70,9 @@ bool local_client::verification()
 	int jsonSize = 0;
 	byte* userData = recivePacket(jsonSize, true);
 	json_ex::local_proto_request* req = json_ex::parse_from_bytes(userData);
+#if DEBUG
+	MessageBox(nullptr, (req->hwid + " RECV").c_str(), "", MB_OK);
+#endif
 	if (req == nullptr)
 		return true;
 
@@ -71,6 +81,7 @@ bool local_client::verification()
 		rsp_obj.result += pKey[i] * 3;
 
 	rsp_obj.salt = sha256(pKey, 8);
+	rsp_obj.result = pKey[0] + pKey[7];
 	std::string rsp = to_json(rsp_obj);
 	if (rsp.empty())
 		return false;
