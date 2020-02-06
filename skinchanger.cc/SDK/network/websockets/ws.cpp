@@ -27,7 +27,8 @@ namespace ws
 	namespace websocket = beast::websocket; // from <boost/beast/websocket.hpp>
 	namespace net = boost::asio;            // from <boost/asio.hpp>
 	using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
-
+	net::io_context ioc;
+	
 	class session : public std::enable_shared_from_this<session>
 	{
 		tcp::resolver resolver_;
@@ -160,7 +161,9 @@ namespace ws
 			boost::ignore_unused(bytes_transferred);
 
 			if (ec)
-				exit(0);
+			{
+				ioc.stop();
+			}
 
 			std::string s = beast::buffers_to_string(buffer_.data());
 
@@ -200,20 +203,23 @@ namespace ws
 			//		&session::on_close,
 			//		shared_from_this()));
 		}
-
-		void on_close(beast::error_code ec)
+		void close()
 		{
-			if (ec)
-				exit(0);
+			ws_.async_close(websocket::close_code::normal,
+				std::bind(&session::on_close, shared_from_this(),
+					std::placeholders::_1)
+			);
+		}
 
-			std::cout << beast::make_printable(buffer_.data()) << std::endl;
+		void on_close(boost::system::error_code ec)
+		{
+			
 		}
 	};
 }
 
 void ws::init_client(const char* host, const char* port, const char* api)
 {
-	net::io_context ioc;
 	std::make_shared<session>(ioc)->run(host, port, api);
 	ioc.run();
 }

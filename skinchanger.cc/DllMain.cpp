@@ -56,7 +56,7 @@ void _stdcall initial_thread()
 	config_system.item.skinchanger_enable = true;
 	config_system.item.glovechanger_enable = true;
 	knife_hook.knife_animation();
-	Beep(500, 500);
+	//Beep(500, 500);
 }
 
 bool __stdcall DllMain(void* instance, unsigned long reason_to_call, void* reserved) 

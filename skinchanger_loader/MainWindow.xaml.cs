@@ -4,6 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Threading;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using skinchanger_loader.SDK.Api;
@@ -27,9 +29,12 @@ namespace skinchanger_loader
 
         private bool _status;
 
+        private DispatcherTimer _timer;
+
         public MainWindow()
         {
             InitializeComponent();
+            _timer = new DispatcherTimer(DispatcherPriority.Background);
         }
 
         private void DragHeader_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -64,7 +69,7 @@ namespace skinchanger_loader
 
         private void MainForm_Loaded(object sender, RoutedEventArgs e)
         {
-            checkSkinChangerStarted();
+            TVersion.Content += ClientData.VERSION;
             _hwid = HWID.GetSign();
             WebSocket ws = new WebSocket("wss://skinchanger.cc/api/software_v2/");
             ServerRequest<AuthData> sr = new ServerRequest<AuthData>()
@@ -73,6 +78,11 @@ namespace skinchanger_loader
                 type = "demoConnect"
             };
 
+
+            ws.OnError += (o, argc) =>
+            {
+                startStatus(false, "Ошибка");
+            };
 
             ws.OnMessage += (o, args) =>
             {
@@ -86,6 +96,7 @@ namespace skinchanger_loader
                                 if (obj["data"]["version"].ToObject<int>() > ClientData.LAST_UPDATE)
                                 {
                                     showMessage("Вышло новое обновление! Загрузите новую версию с нашего сайта.", "Скачать", "open_url", ClientData.SKINCHANGER_CC);
+                                    startStatus(false, "Вышло обновление");
                                     return;
                                 }
 
@@ -93,12 +104,14 @@ namespace skinchanger_loader
                                 {
                                     TOnline.Content = obj["data"]["online"].ToString();
                                     BStartButton.IsEnabled = true;
+                                    checkSkinChangerStarted();
                                 });
                                
 
                                 break;
 
                             case ServerCodes.API_CODE_PROHIBDED:
+                                checkSkinChangerStarted();
                                 break;
                         }
                         break;
@@ -109,12 +122,27 @@ namespace skinchanger_loader
 
                     case "update":
                         showMessage("Вышло новое обновление! Загрузите новую версию с нашего сайта.", "Скачать", "open_url", ClientData.SKINCHANGER_CC);
+                        startStatus(false, "Вышло обновление");
                         break;
                 }
             };
 
             ws.Connect();
             ws.Send(JsonConvert.SerializeObject(sr));
+
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += (o, args) =>
+            {
+                IntPtr hWnd = NativeMethods.FindWindowA(IntPtr.Zero, "Counter-Strike: Global Offensive");
+                if (hWnd == IntPtr.Zero)
+                {
+                    _status = false;
+                    Dispatcher?.Invoke(() =>
+                    {
+                        startStatus(true, "Запустить");
+                    });
+                }
+            };
         }
 
         private void cheatSign()
@@ -130,7 +158,7 @@ namespace skinchanger_loader
                 };
                 proto.SendJson(lreq);
                 DllResponse rsp = proto.ReciveJson<DllResponse>();
-                if (rsp.result == 0)
+                if (rsp.salt.Length == 0)
                 {
                     _status = false;
                     showMessage("Ошибка при обмене данных. Обратитесь в поддержку.", "Обратиться", "open_url", ClientData.SUPPORT_URL);
@@ -238,24 +266,21 @@ namespace skinchanger_loader
         private async void BStartButton_Click(object sender, RoutedEventArgs e)
         {
             showMessage("Происходит запуск, подождите...", "Закрыть", "close");
+            BStartButton.IsEnabled = false;
             await Task.Run(runCsGo);
             await Task.Run(downloadDll);
             await Task.Run(injectLibs);
             await Task.Run(cheatSign);
-            if (!_status)
-            {
-                await Task.Delay(3000);
-                showMessage("Не удалось запустить skinchanger", "Понятно", "message");
-            }
-            else
-                startStatus(false);
+            startStatus(false, "Запущено");
+            _timer.Start();
         }
 
 
-        private void startStatus(bool status)
+        private void startStatus(bool status, string message)
         {
             BStartButton.IsEnabled = status;
-            BStartButton.Content = status ? "Запустить Skinchanger" : "Skinchanger запущен";
+            BStartButton.Content = message;
+            BStartButton.Background = status ? new SolidColorBrush(Color.FromRgb(255, 204, 64))  : new SolidColorBrush(Color.FromRgb(45, 50, 90));
         }
 
         private void checkSkinChangerStarted()
@@ -266,7 +291,8 @@ namespace skinchanger_loader
                 if (hWnd != IntPtr.Zero)
                 {
                     IntPtr result = NativeMethods.SendMessage(hWnd, 0, IntPtr.Zero, (IntPtr)0x103);
-                    startStatus(!(result == (IntPtr)0x505 || result == (IntPtr)0x504));
+                    bool bResult = (result == (IntPtr) 0x505 || result == (IntPtr) 0x504);
+                    startStatus(!bResult, bResult ? "Запущено" : "Запустить");
                 }
             });
         }
@@ -276,12 +302,7 @@ namespace skinchanger_loader
             Process.Start(ClientData.SKINCHANGER_CC);
         }
 
-        private void TFaq_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Process.Start(ClientData.SKINCHANGER_CC);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BFaqButton_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(ClientData.SKINCHANGER_CC);
         }

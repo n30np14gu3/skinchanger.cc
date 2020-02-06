@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Properties="clr-namespace:skinchanger_loader.Properties"
         mc:Ignorable="d"
-        Title="Skinchanger.cc" Height="520" Width="375"
+        Title="Skinchanger.cc" Height="259" Width="375"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -17,34 +17,27 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="NoResize" Loaded="MainForm_Loaded" Icon="default.ico">
-    <Grid Background="#25294A">
-        <StackPanel x:Name="DragHeader" Height="60" VerticalAlignment="Top" Background="#202442" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove"/>
+    <Grid Background="#25294A" Margin="2,0,-2,0">
+        <StackPanel x:Name="DragHeader" Height="60" VerticalAlignment="Top" Background="#202442" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove">
+        </StackPanel>
+
         <Button x:Name="CloseBtn"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Close}"
-                     Height="15" FontSize="14" Background="Transparent" BorderBrush="#00124C85" Foreground="#737AAE" RenderTransformOrigin="0.585,0.818" VerticalAlignment="Top" Margin="339,24,21,0" Padding="0" Click="CloseBtn_Click" />
+                     Height="15" FontSize="14" Background="Transparent" BorderBrush="#00124C85" Foreground="#737AAE" RenderTransformOrigin="0.585,0.818" VerticalAlignment="Top" Margin="0,24,21,0" Padding="0" Click="CloseBtn_Click" HorizontalAlignment="Right" Width="15" />
 
         <Button x:Name="MinBtn"  Margin="317,27,40,0"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Minus}" Click="MinBtn_Click"
                     Padding="0"
                     Height="10" FontSize="14" Background="#00000000" BorderBrush="#FF124C85" Foreground="#737AAE" 
                     Grid.Column="0" IsTabStop="False" IsManipulationEnabled="True" VerticalAlignment="Top"/>
-        <StackPanel x:Name="DragHeader_Copy" Height="60" VerticalAlignment="Top" Background="#4E7CFF" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove" Margin="0,0,172,0"/>
-        <Label Content="Пробная версия" HorizontalAlignment="Left" Margin="24,108,0,0" VerticalAlignment="Top" Foreground="#FFE9EBF9" Padding="0" FontSize="20"/>
-        <Button x:Name="BStartButton" Content="Запустить Skinchanger" HorizontalAlignment="Left" Margin="24,149,0,0" VerticalAlignment="Top" Width="327" Height="40" Background="#FF4E7CFF" BorderBrush="#FF4E7CFF" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="#FFE9EBF9" IsEnabled="False" Click="BStartButton_Click"/>
-        <Label Content="via HUGERAIN" HorizontalAlignment="Left" Margin="257,111,0,0" VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0"/>
-        <Button Content="Хочу предзаказать!" HorizontalAlignment="Left" Margin="24,364,0,0" VerticalAlignment="Top" Width="327" Height="40" Background="#FFCC40" BorderBrush="#FFCC40" Style="{DynamicResource ResourceKey=MaterialDesignFlatButton}" Foreground="#202442" Click="Button_Click"/>
-        <Label x:Name="TFaq" Content="Помощь и инструкция / FAQ" HorizontalAlignment="Left" Margin="94,207,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0" MouseLeftButtonUp="TFaq_MouseLeftButtonUp"/>
-        <Label Content="Хочешь сэкономить к запуску?" HorizontalAlignment="Left" Margin="24,271,0,0" VerticalAlignment="Top" Foreground="#FFE9EBF9" Padding="0" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="24,312,0,0" TextWrapping="Wrap" Text="Оформи предзаказ по огромной скидке и получи уникальные бонусы к отрытию проекта." VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0" Width="327" Height="32"/>
-        <Label Content="{materialDesign:PackIcon}" Height="16" Width="16" Margin="18,487,341,17" Padding="0" FontSize="20" Foreground="#26DA7A"/>
-        <Label Content="Сейчас в игре:" HorizontalAlignment="Left" Margin="41,486,0,0" VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0"/>
-        <Label x:Name="TOnline" Content="0" HorizontalAlignment="Left" Margin="139,486,0,0" VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0"/>
-        <Label Content="Версия: 1.1" HorizontalAlignment="Left" Margin="274,486,0,0" VerticalAlignment="Top" Foreground="#737AAE" FontSize="14" Padding="0"/>
-        <Image HorizontalAlignment="Left" Height="20" Margin="24,20,0,0" VerticalAlignment="Top" Width="18" Source="Resources/logo.png"/>
-        <Label Content="Skinchanger.cc" HorizontalAlignment="Left" Margin="51,21,0,0" VerticalAlignment="Top" Foreground="#E9EBF9" FontSize="14" Padding="0" FontWeight="Bold"/>
+        <Label Content="Временно бесплатно" FontWeight="Medium" HorizontalAlignment="Left" Margin="24,108,0,0" VerticalAlignment="Top" Foreground="#FFE9EBF9" Padding="0" FontSize="20"/>
+        <Button x:Name="BStartButton" Content="Запустить" HorizontalAlignment="Left" Margin="24,149,0,0" VerticalAlignment="Top" Width="275" Height="40" Background="#FFCC40" BorderBrush="#FFCC40" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="#202442" IsEnabled="False" Click="BStartButton_Click"/>
+        <Label Content="Сейчас в игре:" HorizontalAlignment="Left" FontWeight="Medium" Margin="41,0,0,17" Foreground="#737AAE" FontSize="14" Padding="0" Height="17" VerticalAlignment="Bottom"/>
+        <Label x:Name="TOnline" Content="0" Margin="139,0,0,17" FontWeight="Medium" Foreground="#737AAE" FontSize="14" Padding="0" HorizontalAlignment="Left" Width="8" Height="17" VerticalAlignment="Bottom"/>
+        <Label x:Name="TVersion" Content="Версия: " Margin="0,0,24,17" FontWeight="Medium" Foreground="#737AAE" FontSize="14" Padding="0" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="77"/>
 
         <materialDesign:Snackbar
             IsActive="False"
             x:Name="InfoMessage"
-            ActionButtonStyle="{StaticResource f1337}"
+            ActionButtonStyle="{StaticResource ActionMessage}"
             HorizontalAlignment="Stretch"
             Tag="" Background="#FF202442" Foreground="#FF737AAE">
             <materialDesign:SnackbarMessage
@@ -54,6 +47,12 @@
                 Tag=""
                 Name="InfoMessage_Text" ActionClick="InfoMessage_Text_ActionClick"/>
         </materialDesign:Snackbar>
-        <Label x:Name="TMainLink" Content="www.skinchanger.cc" HorizontalAlignment="Left" Margin="120,428,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0" MouseLeftButtonUp="TMainLink_MouseLeftButtonUp"/>
+        <Label x:Name="TMainLink" Content="Skinchanger.cc" FontWeight="Medium" HorizontalAlignment="Left" Margin="254,111,0,0" VerticalAlignment="Top" Style="{StaticResource linkStyle}" FontSize="14" Padding="0" MouseLeftButtonUp="TMainLink_MouseLeftButtonUp"/>
+        <Image HorizontalAlignment="Left" Height="16" Margin="72,22,0,0" VerticalAlignment="Top" Width="16" Source="{DynamicResource debit_cardDrawingImage}"/>
+        <Label Content="Предзаказать" Margin="94,22,0,0" Foreground="#FF737AAE" Cursor="Hand" FontWeight="Medium" Padding="0" FontSize="14" Height="14" VerticalAlignment="Top" HorizontalAlignment="Left" Width="96" MouseLeftButtonUp="TMainLink_MouseLeftButtonUp"/>
+        <Rectangle HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Fill="#25294A"/>
+        <Image HorizontalAlignment="Left" Height="24" Margin="19,18,0,0" VerticalAlignment="Top" Width="22.6" Source="{DynamicResource GunLogo}"/>
+        <Button x:Name="BFaqButton" Content="?" HorizontalAlignment="Left" Margin="311,149,0,0" VerticalAlignment="Top" Width="40" Height="40" Background="#2D325A" BorderBrush="#2D325A" Style="{DynamicResource MaterialDesignFlatButton}" Foreground="#FFE9EBF9" IsEnabled="True" Click="BFaqButton_Click" />
+        <materialDesign:PackIcon Margin="24,0,0,22" Kind="Circle" Width="8" Height="8" Foreground="#41CD7D" VerticalAlignment="Bottom"></materialDesign:PackIcon>
     </Grid>
 </Window>
